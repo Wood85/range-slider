@@ -1,0 +1,12 @@
+$primaryColor: teal;
+$secondaryColor: lightblue;
+
+.title {
+  color: $primaryColor;
+  &__subtitle {
+    color: $secondaryColor;
+    display: block;
+    height: 236px;
+    background: url("../images/range_slider.png");
+  }
+}
