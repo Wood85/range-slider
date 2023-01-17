@@ -1,6 +1,10 @@
 $primaryColor: teal;
 $secondaryColor: lightblue;
 
+html {
+  font-family: Montserrat;
+}
+
 .title {
   color: $primaryColor;
   &__subtitle {
@@ -9,4 +13,8 @@ $secondaryColor: lightblue;
     height: 236px;
     background: url("../images/range_slider.png");
   }
+}
+
+.block{
+  font-weight: 700;
 }
