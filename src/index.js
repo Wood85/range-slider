@@ -9,4 +9,5 @@ const rangeSlider = {
   ...rangeSliderData
 };
 
+$('.block').html('jQuery is working');
 console.log(rangeSlider);

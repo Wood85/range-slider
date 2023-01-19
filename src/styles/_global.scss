@@ -9,7 +9,8 @@ html {
   color: $primaryColor;
   &__subtitle {
     color: $secondaryColor;
-    display: block;
+    display: flex;
+    justify-content: center;
     height: 236px;
     background: url("../images/range_slider.png");
   }

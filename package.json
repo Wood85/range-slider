@@ -8,6 +8,11 @@
     "dev": "set NODE_ENV=development&&webpack",
     "build": "set NODE_ENV=production&&webpack"
   },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "IE 10"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wood85/range-slider.git"
@@ -19,6 +24,9 @@
   },
   "homepage": "https://github.com/Wood85/range-slider#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "html-loader": "^4.2.0",
@@ -35,5 +43,8 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.3"
   }
 }
