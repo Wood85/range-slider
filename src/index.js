@@ -1,13 +1,12 @@
 import './styles/index.scss';
 
-const rangeSliderData = {
-  size: 'big'
-};
+import {RangeSlider} from './range-slider/range-slider';
 
-const rangeSlider = {
-  title: 'range-slider',
-  ...rangeSliderData
-};
 
-$('.block').html('jQuery is working');
-console.log(rangeSlider);
+const rangeSlider = new RangeSlider('#range-slider', {
+
+});
+
+const slider = new RangeSlider('#slider', {
+
+});

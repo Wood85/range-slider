@@ -1,2 +1,12 @@
 @use 'global';
 @use 'fonts';
+@import '../range-slider/range-slider.scss';
+
+.app {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.wrap{
+  width: 500px;
+}

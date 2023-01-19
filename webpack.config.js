@@ -34,7 +34,7 @@ module.exports = {
       filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.pug'
+      template: './src/index.html'
     })
   ],
   module: {
@@ -73,11 +73,6 @@ module.exports = {
       {
         test:/\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: 'asset/resource'
-      },
-      {
-        test:/\.pug$/,
-        loader:'pug-loader',
-        exclude: /(node_modules|bower_components)/
       },
       {
         test: /\.m?js$/,
