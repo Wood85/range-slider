@@ -1,12 +1,12 @@
 import './styles/index.scss';
 
-import {RangeSlider} from './range-slider/range-slider';
+import {RangeSliderView} from './range-slider/layers/range-slider-view';
 
 
-const rangeSlider = new RangeSlider('#range-slider', {
-
+const rangeSlider = new RangeSliderView('#range-slider', {
+  quantity: 2
 });
 
-const slider = new RangeSlider('#slider', {
+const slider = new RangeSliderView('#slider', {
 
 });
