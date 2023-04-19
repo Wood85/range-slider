@@ -1,12 +1,12 @@
 export class RangeSliderView {
-  constructor() {
-    this.rangeSlider = this.getElement('#range-slider');
+  constructor(selector) {
+    this.elem = this.getElement(selector);
     this.slider = this.createElement('div', 'slider');
     this.thumb1 = this.createElement('div', 'slider__thumb1');
     this.thumb2 = this.createElement('div', 'slider__thumb2');
 
     this.slider.append(this.thumb1, this.thumb2);
-    this.rangeSlider.append(this.slider);
+    this.elem.append(this.slider);
 
   }
 
