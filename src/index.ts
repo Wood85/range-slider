@@ -8,3 +8,4 @@ const rangeSlider = new RangeSliderController('#range-slider');
 const rangeSlider2 = new RangeSliderController('#range-slider2');
 
 
+

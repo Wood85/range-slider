@@ -11,7 +11,10 @@ console.log(mode + ' mode');
 module.exports = {
   mode: mode,
   entry: {
-    main:'./src/index.js'
+    main:'./src/index.ts'
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -42,6 +45,11 @@ module.exports = {
       {
         test :/\.html$/i,
         loader: 'html-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(sa|sc|c)ss$/,

@@ -1,5 +1,10 @@
 export class RangeSliderView {
-  constructor(selector) {
+  elem: HTMLElement | null
+  slider: HTMLElement | null
+  thumb1: HTMLElement | null
+  thumb2: HTMLElement | null
+
+  constructor(selector: string) {
     this.elem = this.getElement(selector);
     this.slider = this.createElement('div', 'slider');
     this.thumb1 = this.createElement('div', 'slider__thumb1');
@@ -10,17 +15,17 @@ export class RangeSliderView {
 
   }
 
-  createElement(tag, className) {
+  createElement(tag: string, className?: string): HTMLElement {
     const element = document.createElement(tag)
     if (className) element.classList.add(className)
 
     return element
   }
 
-  getElement(selector) {
-    const element = document.querySelector(selector)
+  getElement(selector: string): HTMLElement {
+    const element: any = document.querySelector(selector);
 
-    return element
+    return element;
   }
 
 }
