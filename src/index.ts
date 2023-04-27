@@ -1,11 +1,11 @@
 import './styles/index.scss';
 
-import {RangeSliderController} from './range-slider/layers/range-slider-controller';
+import './range-slider/range-slider'
 
 
-const rangeSlider = new RangeSliderController('#range-slider');
+$('#range-slider').rangeSlider({direction: 'vertical'});
+$('#range-slider2').rangeSlider({direction: 'horizontal'});
 
-const rangeSlider2 = new RangeSliderController('#range-slider2');
 
 
 
