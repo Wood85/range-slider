@@ -7,10 +7,9 @@ export default class RangeSliderController {
   view: RangeSliderView
 
     constructor(target: JQuery, options: Options) {
-    this.model = new RangeSliderModel();
+    this.model = new RangeSliderModel(options);
     this.view = new RangeSliderView();
-    target.text(options.direction);
-    console.log(options.direction)
+    target.html(this.view.container)
   }
 
 }
