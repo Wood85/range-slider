@@ -11,7 +11,7 @@ console.log(mode + ' mode');
 module.exports = {
   mode: mode,
   entry: {
-    main:'./src/index.ts'
+    main: './src/index.ts'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -43,13 +43,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test :/\.html$/i,
+        test: /\.html$/i,
         loader: 'html-loader'
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            // disable type checker - we will use it in fork plugin
+            transpileOnly: true
+          }
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -79,7 +85,7 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test:/\.(woff|woff2|eot|ttf|otf|svg)$/i,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: 'asset/resource'
       },
       {
