@@ -1,20 +1,20 @@
 interface Props {
-  class?: string;
-  type?: string;
-  value?: string;
-  min?: string;
-  max?: string;
+	class?: string;
+	type?: string;
+	value?: string;
+	min?: string;
+	max?: string;
 }
 
 interface Options {
-  orientation: string;
-  isRange?: boolean;
-  min?: number;
-  max?: number;
-  from?: number;
-  to?: number;
+	orientation: string;
+	isRange?: boolean;
+	min?: number;
+	max?: number;
+	from?: number;
+	to?: number;
 }
 
 interface JQuery {
-  rangeSlider(options?: Options): JQuery;
+	rangeSlider(options?: Options): JQuery;
 }

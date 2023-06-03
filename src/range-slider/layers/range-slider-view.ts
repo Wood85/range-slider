@@ -3,7 +3,8 @@ export class RangeSliderView {
 
 	constructor() {
 		this.container = this.createElement('div', { class: 'container' });
-		this.createRangeSlider();
+		this.renderRangeSlider();
+		this.handlerInput();
 	}
 
 	createElement(tag: string, props?: Props) {
@@ -18,13 +19,13 @@ export class RangeSliderView {
 		return element
 	}
 
-	createRangeSlider() {
+	renderRangeSlider() {
 
 		if (this.container !== null) {
-			const value: HTMLElement = this.createElement('div', { class: 'value' });
-			const rangeSlider: HTMLElement = this.createElement('div', { class: 'range-slider' });
-			const slider: HTMLElement = this.createElement('div', { class: 'slider' });
-			const range: HTMLElement = this.createElement('div', { class: 'range' });
+			const value: HTMLDivElement = this.createElement('div', { class: 'value' });
+			const rangeSlider: HTMLDivElement = this.createElement('div', { class: 'range-slider' });
+			const slider: HTMLDivElement = this.createElement('div', { class: 'slider' });
+			const range: HTMLDivElement = this.createElement('div', { class: 'range' });
 			const inputMin: HTMLInputElement = this.createElement('input', {
 				class: 'value__input',
 				type: 'number',
@@ -37,9 +38,9 @@ export class RangeSliderView {
 				value: '7500'
 			});
 			inputMax.classList.add('value__input_max');
-			const separator: HTMLElement = this.createElement('div', { class: 'value__separator' });
+			const separator: HTMLDivElement = this.createElement('div', { class: 'value__separator' });
 			separator.textContent = '-';
-			const progress: HTMLElement = this.createElement('div', { class: 'slider__progress' });
+			const progress: HTMLDivElement = this.createElement('div', { class: 'slider__progress' });
 			const leftRunner: HTMLInputElement = this.createElement('input', {
 				class: 'range__runner',
 				type: 'range',
@@ -67,8 +68,32 @@ export class RangeSliderView {
 	}
 
 
-	// handlerInput() {
-	//     this.rangeRunners
-	// }
+	handlerInput() {
+		const rangeRunners = document.querySelectorAll('.range__runner'),
+			valueInputs = document.querySelectorAll('.value__input'),
+			progress = document.querySelector('.slider__progress');
+		let gapVal = 1;
+
+		rangeRunners.forEach(runner => {
+			runner.addEventListener('input', event => {
+				let minVal = parseInt(rangeRunners[0].value, 10),
+					maxVal = parseInt(rangeRunners[1].value, 10);
+
+				if (maxVal - minVal < gapVal) {
+					if (event.target.className === 'range__runner_left') {
+						rangeRunners[0].value = maxVal - gapVal;
+					} else {
+						rangeRunners[1].value = minVal + gapVal;
+					}
+				} else {
+					valueInputs[0].value = minVal;
+					valueInputs[1].value = maxVal;
+					progress.style.left = (minVal / rangeRunners[0].max) * 100 + '%';
+					progress.style.right = 100 - (maxVal / rangeRunners[1].max) * 100 + '%'
+				}
+			})
+		})
+
+	}
 
 }
